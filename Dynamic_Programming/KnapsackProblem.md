@@ -1,0 +1,3 @@
+- Core Concept: Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than a given limit and the total value is as large as possible.
+- 0/1 Knapsack: This version means you cannot break items; you either take an item (1) or leave it (0). It is solved using Dynamic Programming.
+- Key Formula: To decide whether to include item $i$ with weight $w_i$ and value $v_i$:$$dp[i][w] = \max(dp[i-1][w], dp[i-1][w-w_i] + v_i)$$
