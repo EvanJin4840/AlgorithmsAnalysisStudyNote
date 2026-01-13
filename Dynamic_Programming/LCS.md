@@ -11,3 +11,14 @@ It uses Dynamic Programming by building a 2D table to store the lengths of commo
 #### Complexity
 
 The time complexity is $O(n \times m)$, where $n$ and $m$ are the lengths of the two strings.
+
+#### Step-by-Step Visualization
+
+Imagine 9$X = \text{"ABCBDAB"}$ and 10$Y = \text{"BDCABA"}$.
+
+1. Initialization: Create a table of size 12$(m+1) \times (n+1)$ and fill the first row and column with 0.13
+2. Filling the Table: Iterate through each character. If you find a match, the "score" increases.
+3. Backtracking: Once the table is full, the bottom-right cell gives you the length. To find the actual string, you start from the bottom-right and move backward:
+
+- If the current characters were a match, move diagonally up-left and record the character.14
+- Otherwise, move to the neighbor with the larger value.
