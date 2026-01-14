@@ -22,3 +22,10 @@ Imagine 9$X = \text{"ABCBDAB"}$ and 10$Y = \text{"BDCABA"}$.
 
 - If the current characters were a match, move diagonally up-left and record the character.14
 - Otherwise, move to the neighbor with the larger value.
+
+3. C Language Implementation Tips
+   When you code this in C, keep these technical details in mind:
+
+- 2D Array Allocation: For large strings, use dynamic memory allocation (malloc) to avoid stack overflow, or use a fixed large buffer if you're just practicing.
+- The "Plus One" Rule: Since C arrays are 0-indexed, but the DP table needs a "0" row/column for the base case, your table size should be (strlen(X)+1) \* (strlen(Y)+1).
+- Space Optimization: Did you know you only actually need two rows of memory to find the length of the LCS? Since we only ever look at the current row and the previous row, you can optimize space from $O(m \times n)$ to $O(n)$
