@@ -12,3 +12,9 @@
   DP Choice: You take Item B and C ($40+$40). Total = $80.
 
 - Conclusion: Because items cannot be split, the local "best" choice (Item A) prevents the global "best" combination (B+C). DP explores all combinations efficiently to find the true maximum.
+
+* Understanding the DP TableWhen you implement this in C, you will create a 2D array K[item_count + 1][capacity + 1].
+
+- The Rows ($i$): Represent the items currently being considered (e.g., "If I only had the first 2 items...").
+- The Columns ($w$): Represent the current capacity of the bag from 0 up to the maximum limit.
+- The Value: Each cell stores the maximum profit possible for that specific sub-problem.
